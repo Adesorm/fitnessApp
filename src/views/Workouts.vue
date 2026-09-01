@@ -106,18 +106,13 @@ const deleteWorkout = async (workoutId) => {
     try {
 
         const response = await fetch(
-            "https://fitnessapi-cabanisan-2.onrender.com/workouts/deleteWorkout",
+            `https://fitnessapi-cabanisan-2.onrender.com/workouts/deleteWorkout/${workoutId}`,
             {
                 method: "DELETE",
 
                 headers: {
-                    "Content-Type": "application/json",
                     Authorization: `Bearer ${token}`
-                },
-
-                body: JSON.stringify({
-                    workoutId: workoutId
-                })
+                }
             }
         );
 
@@ -144,6 +139,7 @@ const deleteWorkout = async (workoutId) => {
             "Something went wrong";
 
     }
+
 };
 
 // LOGOUT
